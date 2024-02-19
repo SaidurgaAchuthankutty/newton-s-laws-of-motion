@@ -65,8 +65,6 @@ def simulate_newtons_laws():
 
 def main():
     st.title("Newton's Laws of Motion Simulation")
-
-
     st.sidebar.title("Newton's Laws of Motion")
     st.sidebar.markdown("### First Law: Inertia")
     st.sidebar.write("An object in motion stays in motion and an object at rest stays at rest, unless acted upon by an external force.")
@@ -74,7 +72,7 @@ def main():
     st.sidebar.write("The acceleration of an object is directly proportional to the net force acting on it and inversely proportional to its mass.")
     st.sidebar.markdown("### Third Law: Action and Reaction")
     st.sidebar.write("For every action, there is an equal and opposite reaction.")
-
+    st.write("Newton's laws of motion: the original 'how-to' guide for making sense of the chaos in the universe... or at least trying to.")
     st.write("This simulation demonstrates Newton's laws of motion using a bouncing ball.")
     st.write("### Simulation Explanation")
     st.write("- **First Law (Inertia)**: The ball continues to move horizontally unless acted upon by an external force, such as gravity.")
