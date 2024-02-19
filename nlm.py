@@ -1,7 +1,7 @@
 import streamlit as st
 import pygame
 import sys
-
+import matplotlib.pyplot as plt
 def simulate_newtons_laws():
     # Initialize Pygame
     pygame.init()
@@ -28,11 +28,11 @@ def simulate_newtons_laws():
     ball_speed_y = 0
 
     # Main loop
-    while True:
+    running = True
+    while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
+                running = False
 
         # Apply Newton's first law: An object in motion stays in motion
         ball_x += ball_speed_x
@@ -61,22 +61,26 @@ def simulate_newtons_laws():
         # Cap the frame rate
         pygame.time.Clock().tick(60)
 
+    pygame.quit()
+
 def main():
     st.title("Newton's Laws of Motion Simulation")
-    st.sidebar.title("Learn About Newton's Laws")
 
-    # Add explanations of Newton's laws in the sidebar
+
+    st.sidebar.title("Newton's Laws of Motion")
     st.sidebar.markdown("### First Law: Inertia")
     st.sidebar.write("An object in motion stays in motion and an object at rest stays at rest, unless acted upon by an external force.")
-
     st.sidebar.markdown("### Second Law: F = ma")
     st.sidebar.write("The acceleration of an object is directly proportional to the net force acting on it and inversely proportional to its mass.")
-
     st.sidebar.markdown("### Third Law: Action and Reaction")
     st.sidebar.write("For every action, there is an equal and opposite reaction.")
 
-    # Add simulation to the main page
-    st.subheader("A simple repesentation")
+    st.write("This simulation demonstrates Newton's laws of motion using a bouncing ball.")
+    st.write("### Simulation Explanation")
+    st.write("- **First Law (Inertia)**: The ball continues to move horizontally unless acted upon by an external force, such as gravity.")
+    st.write("- **Second Law (F = ma)**: The force of gravity causes the ball to accelerate downward (increase in velocity) as it bounces off the ground.")
+    st.write("- **Third Law (Action and Reaction)**: When the ball bounces off the ground, it exerts a force on the ground (action), and the ground exerts an equal and opposite force on the ball (reaction).")
+
     simulate_newtons_laws()
 
 if __name__ == "__main__":
